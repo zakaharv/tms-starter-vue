@@ -3,6 +3,6 @@ export default [
   {
     title: 'Route',
     icon: { icon: 'tabler-route' },
-    to: { name: 'second-page' },
+    to: { name: 'routing' },
   },
 ]

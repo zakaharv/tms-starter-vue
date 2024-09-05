@@ -1,6 +1,196 @@
 // Write your overrides
 h1 {
-    &.app-logo-title {
-        text-transform: uppercase !important
+  &.app-logo-title {
+    text-transform: uppercase !important;
+  }
+}
+
+.layout-nav-type-vertical
+  .layout-vertical-nav
+  .nav-group
+  .nav-group
+  .nav-link
+  .nav-item-icon,
+.layout-nav-type-vertical
+  .layout-vertical-nav
+  .nav-group
+  .nav-group
+  .nav-group
+  .nav-item-icon {
+  margin-inline: 30px 0.8125rem;
+}
+
+//Routing
+
+.routing-layout {
+  display: flex;
+  flex-direction: column;
+  width: 100svw;
+  height: 100svh;
+  overflow: hidden;
+}
+
+.topbar {
+  &-wrapper {
+    width: 100svw;
+    height: 80px;
+    background-color: #25293c;
+    display: flex;
+    padding: 16px;
+    gap: 32px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &-overview {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    &-card {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 3px 10px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      max-height: 48px;
     }
+
+    &-assign {
+      max-height: 48px;
+      padding: 3px 10px;
+      border-radius: 8px;
+      text-align: center;
+      min-width: 100px;
+
+      &.assigned {
+        border: 1px solid #209f59;
+        background: rgba(32, 159, 89, 0.2);
+      }
+
+      &.unassign {
+        border-radius: 8px;
+        border: 1px solid #e64449;
+        background: rgba(230, 68, 73, 0.2);
+      }
+    }
+  }
+
+  &-action {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+}
+
+.routing {
+  &-wrapper {
+    width: 100svw;
+    height: calc(100svh - 80px);
+    background-color: #fff;
+    display: flex;
+  }
+
+  &-map {
+    width: 55svw;
+    height: 100%;
+    background-color: #171b2b;
+  }
+
+  &-execution {
+    width: 45svw;
+    height: 100%;
+    border: 3px solid #25293c;
+
+    &-toolbar {
+      padding: 16px;
+      background-color: #25293c;
+      height: 122px;
+    }
+  }
+}
+
+.routing-table th {
+  padding: 0 8px !important;
+}
+
+.routing-table td {
+  padding: 0 8px !important;
+}
+
+.vehicle-set {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.link-underline {
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.trip {
+  &-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+
+  &-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-content: space-between;
+  }
+
+  &-drive {
+    h5 {
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 28px;
+    }
+
+    &-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+
+      &-list {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+      }
+    }
+  }
+
+  &-status {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-content: space-between;
+
+    &-time {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+}
+
+.store-dialog {
+  &-heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 32px;
+    height: 100%;
+
+    h4 {
+      font-size: 24px;
+    }
+  }
 }

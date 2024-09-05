@@ -1,29 +1,23 @@
 <script setup lang="ts">
-import { useGenerateImageVariant } from '@core/composable/useGenerateImageVariant'
-import authV2MaskDark from '@images/pages/misc-mask-dark.png'
-import authV2MaskLight from '@images/pages/misc-mask-light.png'
-import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
-import { themeConfig } from '@themeConfig'
+import { VNodeRenderer } from "@layouts/components/VNodeRenderer";
+import { themeConfig } from "@themeConfig";
 
 definePage({
   meta: {
-    layout: 'blank',
+    layout: "blank",
     public: true,
   },
-})
+});
 
 const form = ref({
-  email: '',
-  password: '',
+  email: "",
+  password: "",
   remember: false,
-})
+});
 
-const items = ['Foo', 'Bar', 'Fizz', 'Buzz']
+const items = ["Foo", "Bar", "Fizz", "Buzz"];
 
-const isPasswordVisible = ref(false)
-
-
-const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
+const isPasswordVisible = ref(false);
 </script>
 
 <template>
@@ -36,20 +30,21 @@ const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
     </div>
   </a>
 
-  <VRow
-    no-gutters
-    class="auth-wrapper bg-surface"
-  >
-    <VCol
-      md="8"
-      class="d-none d-md-flex"
-    >
-      <div class="position-relative bg-background w-100 me-0" style="background: url(/src/assets/images/Illustration-login.jpg); background-position: bottom left; background-repeat: no-repeat; background-size: cover;">
+  <VRow no-gutters class="auth-wrapper bg-surface">
+    <VCol md="8" class="d-none d-md-flex">
+      <div
+        class="position-relative bg-background w-100 me-0"
+        style="
+          background: url(/src/assets/images/Illustration-login.jpg);
+          background-position: bottom left;
+          background-repeat: no-repeat;
+          background-size: cover;
+        "
+      >
         <div
           class="d-flex align-center justify-center w-100 h-100"
-          style="padding-inline: 6.25rem;"
-        >
-        </div>
+          style="padding-inline: 6.25rem"
+        ></div>
       </div>
     </VCol>
 
@@ -58,18 +53,14 @@ const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
       md="4"
       class="auth-card-v2 d-flex align-center justify-center"
     >
-      <VCard
-        flat
-        :max-width="500"
-        class="mt-12 mt-sm-0 pa-6"
-      >
+      <VCard flat :max-width="500" class="mt-12 mt-sm-0 pa-6">
         <VCardText>
           <h4 class="text-h4 mb-1">
-            Welcome to <span class="text-uppercase">{{ themeConfig.app.title }}</span>! 👋🏻
+            Welcome to
+            <span class="text-uppercase">{{ themeConfig.app.title }}</span
+            >! 👋🏻
           </h4>
-          <p class="mb-0">
-            Please sign-in to your account and start working.
-          </p>
+          <p class="mb-0">Please sign-in to your account and start working.</p>
         </VCardText>
         <VCardText>
           <VForm @submit.prevent="() => {}">
@@ -77,10 +68,10 @@ const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
               <!-- Branch -->
               <VCol cols="12">
                 <AppSelect
-                :items="items"
-                label="Branch"
-                placeholder="Select Branch"
-              />
+                  :items="items"
+                  label="Branch"
+                  placeholder="Select Branch"
+                />
               </VCol>
               <!-- email -->
               <VCol cols="12">
@@ -100,29 +91,22 @@ const authThemeMask = useGenerateImageVariant(authV2MaskLight, authV2MaskDark)
                   label="Password"
                   placeholder="············"
                   :type="isPasswordVisible ? 'text' : 'password'"
-                  :append-inner-icon="isPasswordVisible ? 'tabler-eye-off' : 'tabler-eye'"
+                  :append-inner-icon="
+                    isPasswordVisible ? 'tabler-eye-off' : 'tabler-eye'
+                  "
                   @click:append-inner="isPasswordVisible = !isPasswordVisible"
                 />
 
-                <div class="d-flex align-center flex-wrap justify-space-between my-6">
-                  <VCheckbox
-                    v-model="form.remember"
-                    label="Remember me"
-                  />
-                  <a
-                    class="text-primary"
-                    href="javascript:void(0)"
-                  >
+                <div
+                  class="d-flex align-center flex-wrap justify-space-between my-6"
+                >
+                  <VCheckbox v-model="form.remember" label="Remember me" />
+                  <a class="text-primary" href="javascript:void(0)">
                     Forgot Password?
                   </a>
                 </div>
 
-                <VBtn
-                  block
-                  type="submit"
-                >
-                  Login
-                </VBtn>
+                <VBtn block type="submit"> Login </VBtn>
               </VCol>
             </VRow>
           </VForm>

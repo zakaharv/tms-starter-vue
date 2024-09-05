@@ -37,6 +37,9 @@ declare module 'vue-router/auto-routes' {
     'master-vehicle-vehicle-data-add-edit-vehicle-data-dialog': RouteRecordInfo<'master-vehicle-vehicle-data-add-edit-vehicle-data-dialog', '/master/vehicle/vehicle-data/AddEditVehicleDataDialog', Record<never, never>, Record<never, never>>,
     'master-vehicle-vehicle-type': RouteRecordInfo<'master-vehicle-vehicle-type', '/master/vehicle/vehicle-type', Record<never, never>, Record<never, never>>,
     'master-vehicle-vehicle-type-add-edit-vehicle-type-dialog': RouteRecordInfo<'master-vehicle-vehicle-type-add-edit-vehicle-type-dialog', '/master/vehicle/vehicle-type/AddEditVehicleTypeDialog', Record<never, never>, Record<never, never>>,
+    'report': RouteRecordInfo<'report', '/report', Record<never, never>, Record<never, never>>,
+    'routing': RouteRecordInfo<'routing', '/routing', Record<never, never>, Record<never, never>>,
+    'routing-route-plan': RouteRecordInfo<'routing-route-plan', '/routing/route-plan', Record<never, never>, Record<never, never>>,
     'second-page': RouteRecordInfo<'second-page', '/second-page', Record<never, never>, Record<never, never>>,
   }
 }

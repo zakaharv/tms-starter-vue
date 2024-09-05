@@ -3,6 +3,6 @@ export default [
   {
     title: 'Report',
     icon: { icon: 'tabler-file-analytics' },
-    to: { name: 'second-page' },
+    to: { name: 'report' },
   },
 ]

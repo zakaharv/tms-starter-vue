@@ -7,8 +7,8 @@ export default [
       {
         title: 'Organization Setting',
         children: [
-          { title: 'Company', to: 'master-organization-setting-company' },
-          { title: 'Organization Data', to: 'master-organization-setting-organization-data' },
+          { title: 'Company', to: 'master-organization-setting-company', icon: { icon: 'tabler-corner-down-right' }, },
+          { title: 'Organization Data', to: 'master-organization-setting-organization-data', icon: { icon: 'tabler-corner-down-right' }, },
         ],
       },
       {
@@ -30,8 +30,8 @@ export default [
       {
         title: 'Vehicle Setting',
         children: [
-          { title: 'Vehicle Type', to: 'master-vehicle-vehicle-type' },
-          { title: 'Vehicle Data', to: 'master-vehicle-vehicle-data' },
+          { title: 'Vehicle Type', to: 'master-vehicle-vehicle-type', icon: { icon: 'tabler-corner-down-right' }, },
+          { title: 'Vehicle Data', to: 'master-vehicle-vehicle-data', icon: { icon: 'tabler-corner-down-right' }, },
         ],
       },
       
