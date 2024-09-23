@@ -1,8 +1,14 @@
 export default [
-  { heading: 'ROUTE & TRACKING' },
+  { heading: 'PLANING' },
   {
-    title: 'Route',
-    icon: { icon: 'tabler-route' },
-    to: { name: 'routing' },
+    title: 'Order',
+    icon: { icon: 'tabler-file-invoice' },
+    to: 'routing-order',
   },
+  {
+    title: 'Task',
+    icon: { icon: 'tabler-route' },
+    to: { name: 'routing-task' },
+  },
+  
 ]

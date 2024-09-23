@@ -14,17 +14,17 @@ const createApp = [
   {
     icon: "tabler-file-text",
     title: "SETTING",
-    subtitle: "Set Branch & Date",
+    subtitle: "Set Org & Date",
   },
   {
     icon: "tabler-id",
-    title: "FRAMEWORKS",
-    subtitle: "Select Framework",
+    title: "ORDER",
+    subtitle: "Select Order",
   },
   {
     icon: "tabler-check",
     title: "SUBMIT",
-    subtitle: "Submit",
+    subtitle: "Summary & Create",
   },
 ];
 
@@ -112,9 +112,9 @@ watch(
     <VCard class="create-app-dialog" min-height="590">
       <VCardText class="pa-5 pa-sm-16">
         <!-- 👉 Title -->
-        <h4 class="text-h4 text-center mb-2">Create Route</h4>
+        <h4 class="text-h4 text-center mb-2">Create Task</h4>
         <p class="text-body-1 text-center mb-6">
-          Provide data with this form to create new route.
+          Provide data with this form to create new task route.
         </p>
 
         <VRow>
@@ -137,8 +137,8 @@ watch(
               <VWindowItem>
                 <AppSelect
                   :items="['Foo', 'Bar', 'Fizz', 'Buzz']"
-                  label="Branch"
-                  placeholder="Select Branch"
+                  label="Organization"
+                  placeholder="Select Organization"
                   class="mb-4"
                 />
 
@@ -156,7 +156,7 @@ watch(
                   <VCardItem class="pb-4">
                     <div class="d-flex align-items-center gap-3">
                       <VCardTitle class="mb-0" style="line-height: 2rem"
-                        >Select Invoices</VCardTitle
+                        >Select Order</VCardTitle
                       >
                       <AppDateTimePicker
                         v-model="date"
@@ -222,7 +222,7 @@ watch(
                     <table class="text-base">
                       <tr>
                         <td style="inline-size: 150px">
-                          <p class="font-weight-medium mb-2">Branch</p>
+                          <p class="font-weight-medium mb-2">Organization</p>
                         </td>
                         <td>
                           <p class="mb-2" style="color: #111111">BANDUNG</p>
@@ -272,7 +272,7 @@ watch(
               <VBtn
                 v-if="createApp.length - 1 === currentStep"
                 color="success"
-                to="/routing/route-plan"
+                to="/routing/task/route-plan"
               >
                 Submit & Optimize Route
               </VBtn>

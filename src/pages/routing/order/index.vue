@@ -10,21 +10,16 @@ interface Items {
   customer: string;
   invDate: string;
   deliveryDate: string;
-  amount: number;
-  actual: number;
-  isactive: boolean;
+  nettAmount: number;
+  nettAmountBilled: number;
   reason: string;
+  remark: string;
   orderStatus: string;
-  totalProduct: number;
-  totalDiscTrx: number;
-  totalDisc: number;
-  totalPay: number;
-  totalProductAct: number;
-  totalDiscTrxAct: number;
-  totalDiscAct: number;
-  totalPayAct: number;
-  totalCollect: number;
-  totalPrint: number;
+  vol: number;
+  weight: number;
+  sheet: number;
+  totalPaid: number;
+  paymentMethod: string;
   createdat: string;
   createdby: string;
   updatedat: string;
@@ -57,30 +52,25 @@ const items = ref<Items[]>([
   {
     id: 1,
     invoice: "INV12345",
-    batch: "BATCH-1",
-    batchDate: "20/20/2020",
-    customer: "Toko Maju Jaya Abadi",
-    invDate: "20/20/2020",
-    deliveryDate: "20/20/2020",
-    amount: 12000,
-    actual: 12000,
-    isactive: true,
+    batch: "BATCH1",
+    batchDate: "22/07/2024",
+    customer: "Toko Maju Jaya ",
+    invDate: "22/07/2024",
+    deliveryDate: "22/07/2024",
+    nettAmount: 12000,
+    nettAmountBilled: 12000,
     reason: "lorem ipsum",
-    orderStatus: "ON DELIVERY",
-    totalProduct: 12,
-    totalDiscTrx: 12000,
-    totalDisc: 12,
-    totalPay: 12000,
-    totalProductAct: 12,
-    totalDiscTrxAct: 12,
-    totalDiscAct: 12,
-    totalPayAct: 12000,
-    totalCollect: 12,
-    totalPrint: 12,
-    createdat: "20/20/2024",
-    createdby: "admin",
-    updatedat: "20/20/2024",
-    updatedby: "admin",
+    remark: "lorem ipsum",
+    orderStatus: "new",
+    vol: 100,
+    weight: 100,
+    sheet: 100,
+    totalPaid: 12000,
+    paymentMethod: "cash",
+    createdat: "22/02/2022",
+    createdby: "Admin",
+    updatedat: "22/02/2022",
+    updatedby: "Admin",
     products: [
       {
         id: 1,
@@ -119,30 +109,25 @@ const items = ref<Items[]>([
   {
     id: 2,
     invoice: "INV12345",
-    batch: "BATCH-1",
-    batchDate: "20/20/2020",
-    customer: "Toko Maju Jaya Abadi",
-    invDate: "20/20/2020",
-    deliveryDate: "20/20/2020",
-    amount: 12000,
-    actual: 12000,
-    isactive: false,
+    batch: "BATCH1",
+    batchDate: "22/07/2024",
+    customer: "Toko Maju Jaya 2 ",
+    invDate: "22/07/2024",
+    deliveryDate: "22/07/2024",
+    nettAmount: 12000,
+    nettAmountBilled: 12000,
     reason: "lorem ipsum",
-    orderStatus: "NEW",
-    totalProduct: 12,
-    totalDiscTrx: 12000,
-    totalDisc: 12,
-    totalPay: 12000,
-    totalProductAct: 12,
-    totalDiscTrxAct: 12,
-    totalDiscAct: 12,
-    totalPayAct: 12000,
-    totalCollect: 12,
-    totalPrint: 12,
-    createdat: "20/20/2024",
-    createdby: "admin",
-    updatedat: "20/20/2024",
-    updatedby: "admin",
+    remark: "lorem ipsum",
+    orderStatus: "routed",
+    vol: 100,
+    weight: 100,
+    sheet: 100,
+    totalPaid: 12000,
+    paymentMethod: "cash",
+    createdat: "22/02/2022",
+    createdby: "Admin",
+    updatedat: "22/02/2022",
+    updatedby: "Admin",
     products: [
       {
         id: 1,
@@ -186,10 +171,12 @@ const headers = [
   { title: "Order No", key: "invoice" },
   { title: "Store Name", key: "customer" },
   { title: "Order date", key: "invDate" },
-  { title: "Amount", key: "amount" },
-  { title: "Actual", key: "actual" },
   { title: "Batch ID", key: "batch" },
   { title: "Batch Date", key: "batchDate" },
+  { title: "Vol", key: "vol" },
+  { title: "Kg", key: "weight" },
+  { title: "Sheet", key: "sheet" },
+  { title: "Nett Amount", key: "nettAmount" },
   { title: "Order Status", key: "orderStatus" },
 ];
 
@@ -330,58 +317,40 @@ const orderStatus = [
         <!-- 👉 Expand -->
         <template #expanded-row="slotProps">
           <tr class="v-data-table__tr">
-            <td :colspan="3" style="vertical-align: top">
+            <td :colspan="5" style="vertical-align: top">
               <p class="my-1">
-                <span class="font-weight-bold">Total Products :</span>
-                {{ slotProps.item.totalProduct }}
+                <span class="font-weight-bold">Total Nett Amount :</span>
+                {{ slotProps.item.nettAmount }}
               </p>
               <p class="my-1">
-                <span class="font-weight-bold"
-                  >Total Discount Transaction :</span
-                >
-                {{ slotProps.item.totalDiscTrx }}
+                <span class="font-weight-bold">Total Nett Amount Billed :</span>
+                {{ slotProps.item.nettAmountBilled }}
               </p>
               <p class="my-1">
-                <span class="font-weight-bold">Total Discount :</span>
-                {{ slotProps.item.totalDisc }}
+                <span class="font-weight-bold">Payment Method :</span>
+                {{ slotProps.item.paymentMethod }}
               </p>
               <p class="my-1">
-                <span class="font-weight-bold">Total Payment :</span>
-                {{ slotProps.item.totalPay }}
+                <span class="font-weight-bold">Total Paid Amount :</span>
+                {{ slotProps.item.totalPaid }}
               </p>
             </td>
-            <td :colspan="3" style="vertical-align: top">
+            <td :colspan="6" style="vertical-align: top">
               <p class="my-1">
-                <span class="font-weight-bold">Total Products Actual :</span>
-                {{ slotProps.item.totalProductAct }}
-              </p>
-              <p class="my-1">
-                <span class="font-weight-bold"
-                  >Total Discount Transaction Actual :</span
-                >
-                {{ slotProps.item.totalDiscTrxAct }}
-              </p>
-              <p class="my-1">
-                <span class="font-weight-bold">Total Discount Actual :</span>
-                {{ slotProps.item.totalDiscAct }}
-              </p>
-              <p class="my-1">
-                <span class="font-weight-bold">Total Payment Actual :</span>
-                {{ slotProps.item.totalPayAct }}
-              </p>
-            </td>
-            <td :colspan="3" style="vertical-align: top">
-              <p class="my-1">
-                <span class="font-weight-bold">Total Collection :</span>
-                {{ slotProps.item.totalCollect }}
-              </p>
-              <p class="my-1">
-                <span class="font-weight-bold">Total Print :</span>
-                {{ slotProps.item.totalPrint }}
+                <span class="font-weight-bold">Remark :</span>
+                {{ slotProps.item.remark }}
               </p>
               <p class="my-1">
                 <span class="font-weight-bold">Reason :</span>
                 {{ slotProps.item.reason }}
+              </p>
+              <p class="my-1">
+                <span class="font-weight-bold">Created :</span>
+                {{ slotProps.item.createdby }}, {{ slotProps.item.createdat }}
+              </p>
+              <p class="my-1">
+                <span class="font-weight-bold">Updated :</span>
+                {{ slotProps.item.updatedby }}, {{ slotProps.item.updatedat }}
               </p>
             </td>
           </tr>
@@ -410,64 +379,42 @@ const orderStatus = [
                 <h4 class="text-h4 text-center mb-6">{{ item.invoice }}</h4>
                 <!-- Detail -->
                 <VRow>
-                  <VCol cols="12" sm="4">
+                  <VCol cols="12" sm="5">
                     <p class="my-1">
-                      <span class="font-weight-bold">Total Products :</span>
-                      {{ item.totalProduct }}
+                      <span class="font-weight-bold">Total Nett Amount :</span>
+                      {{ item.nettAmount }}
                     </p>
                     <p class="my-1">
                       <span class="font-weight-bold"
-                        >Total Discount Transaction :</span
+                        >Total Nett Amount Billed :</span
                       >
-                      {{ item.totalDiscTrx }}
+                      {{ item.nettAmountBilled }}
                     </p>
                     <p class="my-1">
-                      <span class="font-weight-bold">Total Discount :</span>
-                      {{ item.totalDisc }}
+                      <span class="font-weight-bold">Payment Method :</span>
+                      {{ item.paymentMethod }}
                     </p>
                     <p class="my-1">
-                      <span class="font-weight-bold">Total Payment :</span>
-                      {{ item.totalPay }}
+                      <span class="font-weight-bold">Total Paid Amount :</span>
+                      {{ item.totalPaid }}
                     </p>
                   </VCol>
-                  <VCol cols="12" sm="4">
+                  <VCol cols="12" sm="6">
                     <p class="my-1">
-                      <span class="font-weight-bold"
-                        >Total Products Actual :</span
-                      >
-                      {{ item.totalProductAct }}
-                    </p>
-                    <p class="my-1">
-                      <span class="font-weight-bold"
-                        >Total Discount Transaction Actual :</span
-                      >
-                      {{ item.totalDiscTrxAct }}
-                    </p>
-                    <p class="my-1">
-                      <span class="font-weight-bold"
-                        >Total Discount Actual :</span
-                      >
-                      {{ item.totalDiscAct }}
-                    </p>
-                    <p class="my-1">
-                      <span class="font-weight-bold"
-                        >Total Payment Actual :</span
-                      >
-                      {{ item.totalPayAct }}
-                    </p>
-                  </VCol>
-                  <VCol cols="12" sm="4">
-                    <p class="my-1">
-                      <span class="font-weight-bold">Total Collection :</span>
-                      {{ item.totalCollect }}
-                    </p>
-                    <p class="my-1">
-                      <span class="font-weight-bold">Total Print :</span>
-                      {{ item.totalPrint }}
+                      <span class="font-weight-bold">Remark :</span>
+                      {{ item.remark }}
                     </p>
                     <p class="my-1">
                       <span class="font-weight-bold">Reason :</span>
                       {{ item.reason }}
+                    </p>
+                    <p class="my-1">
+                      <span class="font-weight-bold">Created :</span>
+                      {{ item.createdby }}, {{ item.createdat }}
+                    </p>
+                    <p class="my-1">
+                      <span class="font-weight-bold">Updated :</span>
+                      {{ item.updatedby }}, {{ item.updatedat }}
                     </p>
                   </VCol>
                 </VRow>
@@ -559,7 +506,9 @@ const orderStatus = [
 
         <!-- 👉 Order Status -->
         <template #item.orderStatus="{ item }">
-          <div class="font-weight-bold">• {{ item.orderStatus }}</div>
+          <div class="font-weight-bold text-uppercase">
+            • {{ item.orderStatus }}
+          </div>
         </template>
       </VDataTable>
     </VCard>

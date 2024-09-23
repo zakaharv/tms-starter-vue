@@ -16,6 +16,7 @@ const dialogVisibleUpdate = (val: boolean) => {
 
 const timeLeave = ref("");
 const timeReturn = ref("");
+const date = ref("");
 </script>
 
 <template>

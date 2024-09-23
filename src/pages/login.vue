@@ -69,18 +69,18 @@ const isPasswordVisible = ref(false);
               <VCol cols="12">
                 <AppSelect
                   :items="items"
-                  label="Branch"
-                  placeholder="Select Branch"
+                  label="Organization"
+                  placeholder="Select Organization"
                 />
               </VCol>
-              <!-- email -->
+              <!-- username -->
               <VCol cols="12">
                 <AppTextField
                   v-model="form.email"
                   autofocus
-                  label="Email or Username"
+                  label="Username"
                   type="email"
-                  placeholder="johndoe@email.com"
+                  placeholder="Fill your username"
                 />
               </VCol>
 

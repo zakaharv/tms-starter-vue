@@ -20,10 +20,6 @@ export default [
         to: 'master-product',
       },
       {
-        title: 'Order',
-        to: 'master-order',
-      },
-      {
         title: 'Users',
         to: 'master-users',
       },

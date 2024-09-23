@@ -22,8 +22,6 @@ declare module 'vue-router/auto-routes' {
     '$error': RouteRecordInfo<'$error', '/:error(.*)', { error: ParamValue<true> }, { error: ParamValue<false> }>,
     'login': RouteRecordInfo<'login', '/login', Record<never, never>, Record<never, never>>,
     'master-customer': RouteRecordInfo<'master-customer', '/master/customer', Record<never, never>, Record<never, never>>,
-    'master-order': RouteRecordInfo<'master-order', '/master/order', Record<never, never>, Record<never, never>>,
-    'master-order-add-edit-order-dialog': RouteRecordInfo<'master-order-add-edit-order-dialog', '/master/order/AddEditOrderDialog', Record<never, never>, Record<never, never>>,
     'master-organization-setting-company': RouteRecordInfo<'master-organization-setting-company', '/master/organization-setting/company', Record<never, never>, Record<never, never>>,
     'master-organization-setting-organization-data': RouteRecordInfo<'master-organization-setting-organization-data', '/master/organization-setting/organization-data', Record<never, never>, Record<never, never>>,
     'master-organization-setting-organization-data-add-edit-organization-dialog': RouteRecordInfo<'master-organization-setting-organization-data-add-edit-organization-dialog', '/master/organization-setting/organization-data/AddEditOrganizationDialog', Record<never, never>, Record<never, never>>,
@@ -38,8 +36,10 @@ declare module 'vue-router/auto-routes' {
     'master-vehicle-vehicle-type': RouteRecordInfo<'master-vehicle-vehicle-type', '/master/vehicle/vehicle-type', Record<never, never>, Record<never, never>>,
     'master-vehicle-vehicle-type-add-edit-vehicle-type-dialog': RouteRecordInfo<'master-vehicle-vehicle-type-add-edit-vehicle-type-dialog', '/master/vehicle/vehicle-type/AddEditVehicleTypeDialog', Record<never, never>, Record<never, never>>,
     'report': RouteRecordInfo<'report', '/report', Record<never, never>, Record<never, never>>,
-    'routing': RouteRecordInfo<'routing', '/routing', Record<never, never>, Record<never, never>>,
-    'routing-route-plan': RouteRecordInfo<'routing-route-plan', '/routing/route-plan', Record<never, never>, Record<never, never>>,
+    'routing-order': RouteRecordInfo<'routing-order', '/routing/order', Record<never, never>, Record<never, never>>,
+    'routing-order-add-edit-order-dialog': RouteRecordInfo<'routing-order-add-edit-order-dialog', '/routing/order/AddEditOrderDialog', Record<never, never>, Record<never, never>>,
+    'routing-task': RouteRecordInfo<'routing-task', '/routing/task', Record<never, never>, Record<never, never>>,
+    'routing-task-route-plan': RouteRecordInfo<'routing-task-route-plan', '/routing/task/route-plan', Record<never, never>, Record<never, never>>,
     'second-page': RouteRecordInfo<'second-page', '/second-page', Record<never, never>, Record<never, never>>,
   }
 }

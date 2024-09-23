@@ -166,7 +166,7 @@ const resolveStatusVariant = (isactive: boolean) => {
         <template #expanded-row="slotProps">
           <tr class="v-data-table__tr">
             <td :colspan="headers.length" style="vertical-align: top">
-              <p class="mb-1 text-muted">Organization</p>
+              <p class="mb-1 text-muted">Organization:</p>
               <p class="my-1">{{ slotProps.item.organization }}</p>
             </td>
           </tr>

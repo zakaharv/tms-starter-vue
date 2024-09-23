@@ -12,7 +12,7 @@ const isCreateAppVisible = ref(false);
     class="d-flex flex-wrap justify-start justify-sm-space-between gap-y-4 gap-x-6 mb-6"
   >
     <div class="d-flex flex-column justify-center">
-      <h4 class="text-h4 font-weight-medium">Routing</h4>
+      <h4 class="text-h4 font-weight-medium">Task</h4>
       <div class="text-body-1">Optimizing Delivery Paths</div>
     </div>
 
@@ -24,7 +24,7 @@ const isCreateAppVisible = ref(false);
         style="width: 240px"
       />
       <VBtn color="primary" @click="isCreateAppVisible = !isCreateAppVisible">
-        <VIcon start icon="tabler-plus" /> Create New Routing
+        <VIcon start icon="tabler-plus" /> Create New Task
       </VBtn>
     </div>
   </div>
@@ -39,7 +39,7 @@ const isCreateAppVisible = ref(false);
           <VIcon icon="tabler-route" size="28" />
         </VAvatar>
         <h4 class="text-h4">
-          Route Plan
+          Task Plan
           <span class="text-secondary"> • Senin, 22 Agustus 2024</span>
         </h4>
       </div>
@@ -85,7 +85,7 @@ const isCreateAppVisible = ref(false);
             </div>
           </div>
         </div>
-        <VBtn color="secondary" variant="outlined"> View Detail Route </VBtn>
+        <VBtn color="secondary" variant="outlined"> View Detail Task </VBtn>
       </div>
     </VCardText>
   </VCard>

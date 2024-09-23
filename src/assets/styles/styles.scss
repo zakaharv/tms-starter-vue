@@ -194,3 +194,117 @@ h1 {
     }
   }
 }
+
+.timeline {
+  &-header {
+    background-color: #fff;
+    display: flex;
+    width: fit-content;
+
+    &-vehicle {
+      padding: 10px 16px;
+      height: 42px;
+      width: 250px;
+      display: block;
+
+      span {
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 22px;
+        width: calc(250px - 32px);
+        display: block;
+      }
+    }
+
+    &-time {
+      display: flex;
+      gap: 0;
+      flex-wrap: nowrap;
+
+      &-clock {
+        position: relative;
+        width: 100px;
+        height: 42px;
+
+        span {
+          font-size: 15px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 22px; /* 146.667% */
+          position: absolute;
+          right: -17px;
+          top: 10px;
+          color: #2f2b3d;
+        }
+      }
+    }
+  }
+
+  &-line {
+    width: fit-content;
+    &-list {
+      display: flex;
+      background-color: #f8f7fa;
+      border-bottom: 1px solid #ede9f5;
+      height: 110px;
+      width: fit-content;
+    }
+
+    &-vehicle {
+      padding: 8px;
+      height: 110px;
+      width: 250px;
+      display: block;
+
+      &-card {
+        border-radius: 6px;
+        background: #fff;
+        box-shadow: 0px 2px 8px 0px rgba(47, 43, 61, 0.12);
+        padding: 9px;
+        width: calc(250px - 16px);
+      }
+    }
+
+    &-time {
+      height: 110px;
+      position: relative;
+
+      &-route {
+        position: absolute;
+        bottom: 24px;
+        &-point {
+          height: 40px;
+          border-radius: 4px;
+          background: #fff;
+          box-shadow: 0px 2px 8px 0px rgba(47, 43, 61, 0.12);
+          text-align: center;
+          padding: 0 1px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+        }
+        &-border {
+          height: 4px;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          right: 0;
+          transform: translateY(-50%);
+        }
+      }
+
+      &-divider {
+        display: flex;
+        gap: 0;
+        flex-wrap: nowrap;
+        &-square {
+          width: 100px;
+          height: 110px;
+          border-right: 1px solid #ede9f5;
+        }
+      }
+    }
+  }
+}

@@ -7,36 +7,42 @@ const visitData = ref([
     storeCode: "48/01/060573",
     time: "11:29",
     status: "visited",
+    task: 123,
   },
   {
     store: "TOKO RIZKY GANG BAHAGIA NO 25",
     storeCode: "48/01/060573",
     time: "11:29",
     status: "unvisited",
+    task: 456,
   },
   {
     store: "TOKO RIZKY GANG BAHAGIA NO 25",
     storeCode: "48/01/060573",
     time: "11:29",
     status: "outstanding",
+    task: 789,
   },
   {
     store: "TOKO RIZKY GANG BAHAGIA NO 25",
     storeCode: "48/01/060573",
     time: "11:29",
     status: "null",
+    task: 123,
   },
   {
     store: "TOKO RIZKY GANG BAHAGIA NO 25",
     storeCode: "48/01/060573",
     time: "11:29",
     status: "visited",
+    task: 567,
   },
   {
     store: "TOKO RIZKY GANG BAHAGIA NO 25",
     storeCode: "48/01/060573",
     time: "11:29",
     status: "visited",
+    task: 123,
   },
 ]);
 
@@ -95,7 +101,7 @@ const isStoreDialogVisible = ref(false);
       </div>
       <div class="app-timeline-title">{{ data.store }}</div>
       <div class="app-timeline-text mb-1">
-        {{ data.storeCode }}
+        {{ data.storeCode }} • Task #{{ data.task }}
       </div>
 
       <VBtn
